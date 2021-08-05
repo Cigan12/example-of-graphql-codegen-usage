@@ -1,0 +1,8 @@
+type Query {
+    getChlen: Chlen!
+    getChlenById(id: Int!): Chlen
+}
+
+type Chlen {
+    length: String!
+}

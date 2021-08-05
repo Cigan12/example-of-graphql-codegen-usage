@@ -1,0 +1,15 @@
+overwrite: true
+schema: 'http://localhost:3005'
+documents: null
+generates:
+    src/generated/graphql.ts:
+        config:
+            useIndexSignature: true
+            noSchemaStitching: false
+        plugins:
+            - 'typescript'
+            - 'typescript-resolvers'
+
+    ./graphql.schema.json:
+        plugins:
+            - 'introspection'
