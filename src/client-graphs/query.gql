@@ -1,0 +1,8 @@
+query ExampleQuery($getChlenByIdId: Int!) {
+    getChlen {
+        length
+    }
+    getChlenById(id: $getChlenByIdId) {
+        length
+    }
+}

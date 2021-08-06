@@ -1,15 +1,22 @@
 overwrite: true
 schema: 'http://localhost:3005'
-documents: null
+documents: 'src/client-graphs/**/*.gql'
 generates:
     src/generated/graphql.ts:
-        config:
-            useIndexSignature: true
-            noSchemaStitching: false
         plugins:
-            - 'typescript'
             - 'typescript-resolvers'
 
+    src/client/graphql.ts:
+        plugins:
+            - 'typescript'
+    src/client/hooks.ts:
+        plugins:
+            - typescript
+            - typescript-operations
+              - typescript-react-apollo
+        config:
+            withHooks: true
+            withResultType: true
     ./graphql.schema.json:
         plugins:
             - 'introspection'

@@ -1,4 +1,5 @@
 import { mergeResolvers } from '@graphql-tools/merge';
+import { useExampleQueryQuery } from '../client/hooks';
 import { Resolvers } from '../generated/graphql';
 
 const GetChlen: Resolvers = {
