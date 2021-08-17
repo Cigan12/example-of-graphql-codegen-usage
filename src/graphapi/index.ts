@@ -1,21 +1,13 @@
 import { mergeResolvers } from '@graphql-tools/merge';
-import { useExampleQueryQuery } from '../client/hooks';
 import { Resolvers } from '../generated/graphql';
 
-const GetChlen: Resolvers = {
+const GetTestById: Resolvers = {
     Query: {
-        getChlen: (arg) => ({
-            length: '5 cm',
-        }),
-    },
-};
-
-const GetChlenById: Resolvers = {
-    Query: {
-        getChlenById: (parent, { id }, context) => ({
+        getTestById: (parent, { id }, context) => ({
             length: '15',
+            test: 10,
         }),
     },
 };
 
-export const resolvers = mergeResolvers([GetChlen, GetChlenById]);
+export const resolvers = mergeResolvers([GetTestById]);

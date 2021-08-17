@@ -13,10 +13,7 @@ generates:
         plugins:
             - typescript
             - typescript-operations
-              - typescript-react-apollo
-        config:
-            withHooks: true
-            withResultType: true
+            - typescript-react-apollo
     ./graphql.schema.json:
         plugins:
             - 'introspection'

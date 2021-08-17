@@ -11,18 +11,18 @@ export type Scalars = {
   Float: number;
 };
 
-export type Chlen = {
-  __typename?: 'Chlen';
-  length: Scalars['String'];
-};
-
 export type Query = {
   __typename?: 'Query';
-  getChlen: Chlen;
-  getChlenById?: Maybe<Chlen>;
+  getTestById?: Maybe<Test>;
 };
 
 
-export type QueryGetChlenByIdArgs = {
+export type QueryGetTestByIdArgs = {
   id: Scalars['Int'];
+};
+
+export type Test = {
+  __typename?: 'Test';
+  length: Scalars['String'];
+  test: Scalars['Int'];
 };

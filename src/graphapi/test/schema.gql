@@ -1,0 +1,8 @@
+type Query {
+    getTestById(id: Int!): Test
+}
+
+type Test {
+    length: String!
+    test: Int!
+}

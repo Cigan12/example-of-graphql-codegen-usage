@@ -69,34 +69,34 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Chlen: ResolverTypeWrapper<Chlen>;
-  String: ResolverTypeWrapper<Scalars['String']>;
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Test: ResolverTypeWrapper<Test>;
+  String: ResolverTypeWrapper<Scalars['String']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Chlen: Chlen;
-  String: Scalars['String'];
   Query: {};
   Int: Scalars['Int'];
+  Test: Test;
+  String: Scalars['String'];
   Boolean: Scalars['Boolean'];
 };
 
-export type ChlenResolvers<ContextType = any, ParentType extends ResolversParentTypes['Chlen'] = ResolversParentTypes['Chlen']> = {
+export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  getTestById?: Resolver<Maybe<ResolversTypes['Test']>, ParentType, ContextType, RequireFields<QueryGetTestByIdArgs, 'id'>>;
+};
+
+export type TestResolvers<ContextType = any, ParentType extends ResolversParentTypes['Test'] = ResolversParentTypes['Test']> = {
   length?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  test?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  getChlen?: Resolver<ResolversTypes['Chlen'], ParentType, ContextType>;
-  getChlenById?: Resolver<Maybe<ResolversTypes['Chlen']>, ParentType, ContextType, RequireFields<QueryGetChlenByIdArgs, 'id'>>;
-};
-
 export type Resolvers<ContextType = any> = {
-  Chlen?: ChlenResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  Test?: TestResolvers<ContextType>;
 };
 
